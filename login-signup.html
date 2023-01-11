@@ -55,7 +55,7 @@
         <input id="cpassword" type="password" name="user-cpassword" class="input-box" placeholder="Confirm Password"
           required />
         <div id="errorCPassword" class="error"></div>
-        <input type="submit" name="signup-button" class="button" value="Sign Up" onclick="saveData()" />
+        <input type="submit" name="signup-button" class="button" value="Sign Up" onclick="return saveData()" />
       </form>
     </div>
   </section>
@@ -72,6 +72,11 @@
     alert("User registered successfully!! Please login now!")
     location.reload();
 
+    document.getElementById("username").value != '';
+    document.getElementById("email").value != '';
+    document.getElementById("phone").value != '';
+    document.getElementById("password").value != '';
+    document.getElementById("cpassword").value != '';
     // username.value = '';
     // email.value = '';
     // phone.value = "";
@@ -95,6 +100,8 @@
       document.getElementById("phone").value = "";
       document.getElementById("password").value = "";
       document.getElementById("cpassword").value = "";
+
+      return false;
     }
   }
 
