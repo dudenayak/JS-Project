@@ -62,7 +62,7 @@
 
 </body>
 <script>
-  function saveData() {
+  function saveData(e) {
     let username, email, phone, password, cpassword;
     username = document.getElementById("username").value;
     email = document.getElementById("email").value;
@@ -70,6 +70,12 @@
     password = document.getElementById("password").value;
     cpassword = document.getElementById("cpassword").value;
     alert("User registered successfully!!")
+
+    // username.value = '';
+    // email.value = '';
+    // phone.value = "";
+    // password.value = "";
+    // cpassword.value = "";
 
     let user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
     if (user_records.some((v) => { return v.email == email })) {
@@ -83,13 +89,12 @@
         "cpassword": cpassword
       })
       localStorage.setItem("users", JSON.stringify(user_records));
+      document.getElementById("username").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("cpassword").value = "";
     }
-
-    // localStorage.setItem("username", username);
-    // localStorage.setItem("email", email);
-    // localStorage.setItem("phone", phone);
-    // localStorage.setItem("password", password);
-    // localStorage.setItem("cpassword", cpassword);
   }
 
   function loadData() {
