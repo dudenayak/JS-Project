@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login SignUp</title>
+  <link rel="stylesheet" href="login/css/style.css" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body>
+
+  <!-- LEFT FORM -->
+  <section class="left-section">
+    <div id="left-cover" class="cover cover-hide">
+      <img src="login/img/cover.png" alt="" />
+      <h1>Welcome User!</h1>
+      <h3>Already have an account?</h3>
+      <button type="button" class="switch-button" onclick="location.reload()">
+        Login
+      </button>
+    </div>
+    <div id="left-form" class="form fade-in-element">
+      <h1>Login</h1>
+      <form action="/" method="GET">
+        <input id="username_login" type="text" name="user-name" class="input-box" placeholder="Username" required />
+        <input id="password_login" type="password" name="user-password" class="input-box" placeholder="Password"
+          required />
+        <input type="button" name="login-button" class="button" value="Login" onclick="loadData()" />
+      </form>
+    </div>
+  </section>
+
+  <!-- RIGHT FORM -->
+  <section class="right-section">
+    <div id="right-cover" class="cover fade-in-element">
+      <img src="login/img/cover.png" alt="" />
+      <h1>Welcome User!</h1>
+      <h3>Don't have an account?</h3>
+      <button type="button" class="switch-button" onclick="switchSide()">
+        Sign Up
+      </button>
+    </div>
+    <div id="right-form" class="form form-hide">
+      <h1>Sign Up</h1>
+      <form id="form" action="/" name="myForm" method="post">
+        <input id="username" type="text" name="user-name" class="input-box" placeholder="Username" required />
+        <div id="errorUsername" class="error"></div>
+        <input id="email" type="email" name="user-email" class="input-box" placeholder="Email" required />
+        <div id="errorEmail" class="error"></div>
+        <input id="phone" type="number" name="user-phone" class="input-box" placeholder="Phone Number" required />
+        <div id="errorPhone" class="error"></div>
+        <input id="password" type="password" name="user-password" class="input-box" placeholder="Password" required />
+        <div id="errorPassword" class="error"></div>
+        <input id="cpassword" type="password" name="user-cpassword" class="input-box" placeholder="Confirm Password"
+          required />
+        <div id="errorCPassword" class="error"></div>
+        <input type="submit" name="signup-button" class="button" value="Sign Up" onclick="saveData()" />
+      </form>
+    </div>
+  </section>
+
+</body>
+<script>
+  function saveData() {
+    let username, email, phone, password, cpassword;
+    username = document.getElementById("username").value;
+    email = document.getElementById("email").value;
+    phone = document.getElementById("phone").value;
+    password = document.getElementById("password").value;
+    cpassword = document.getElementById("cpassword").value;
+    alert("User registered successfully!!")
+
+    let user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+    if (user_records.some((v) => { return v.email == email })) {
+      alert("This Email ID is already in use!")
+    } else {
+      user_records.push({
+        "username": username,
+        "email": email,
+        "phone": phone,
+        "password": password,
+        "cpassword": cpassword
+      })
+      localStorage.setItem("users", JSON.stringify(user_records));
+    }
+
+    // localStorage.setItem("username", username);
+    // localStorage.setItem("email", email);
+    // localStorage.setItem("phone", phone);
+    // localStorage.setItem("password", password);
+    // localStorage.setItem("cpassword", cpassword);
+  }
+
+  function loadData() {
+    let username, password;
+    username = document.getElementById("username_login").value;
+    // email = document.getElementById("email").value;
+    password = document.getElementById("password_login").value;
+
+    let user_records = new Array();
+    user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+    if (user_records.some((v) => { return v.username == username && v.password == password })) {
+      alert("Logged in successfully!");
+      let current_user = user_records.filter((v) => { return v.username == username && v.password == password })[0]
+      localStorage.setItem("code", "secret");
+      window.location.href = "home.html";
+    } else {
+      alert("Login failed")
+    }
+  }
+</script>
+<script src="login/js/main.js"></script>
+<script src="./registration.js"></script>
+
+</html>

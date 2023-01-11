@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="home/css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body>
+    <div id="header" class="header">
+        <div class="logo">
+            <img src="./home/img/fullLogo.jpg" alt="Spotify Full Logo" class="brand" />
+        </div>
+        <div class="links">
+            <div class="header_link">New Releases</div>
+            <div class="header_link">Trending</div>
+            <div class="header_link">Podcasts</div>
+            <div class="header_link">Library</div>
+        </div>
+        <div class="profile">
+            <img src="./home/img/user.jpg" alt="User Profile" class="user_img" />
+            <div class="user_name">
+                <!-- <script>document.write(localStorage.getItem("username"))</script> -->
+                Devesh
+            </div>
+            <a href="logout.html">Logout</a>
+        </div>
+    </div>
+
+
+    <script>
+        var check = localStorage.getItem("code")
+
+        if (check == "secret") {
+
+        } else {
+            window.location.href = "login-signup.html"
+        }
+    </script>
+</body>
+
+</html>
