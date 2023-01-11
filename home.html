@@ -6,26 +6,179 @@
     <title>Home</title>
     <link rel="stylesheet" href="home/css/style.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 </head>
 
 <body>
-    <div id="header" class="header">
-        <div class="logo">
-            <img src="./home/img/fullLogo.jpg" alt="Spotify Full Logo" class="brand" />
-        </div>
-        <div class="links">
-            <div class="header_link">New Releases</div>
-            <div class="header_link">Trending</div>
-            <div class="header_link">Podcasts</div>
-            <div class="header_link">Library</div>
-        </div>
-        <div class="profile">
-            <img src="./home/img/user.jpg" alt="User Profile" class="user_img" />
-            <div class="user_name">
-                <!-- <script>document.write(localStorage.getItem("username"))</script> -->
-                <!-- Devesh -->
+    <div id="main" class="main">
+        <div class="container position-relative">
+            <div id="header" class="header">
+                <div class="logo">
+                    <img src="./home/img/fullLogo.jpg" alt="Spotify Full Logo" class="brand" />
+                </div>
+                <div class="links">
+                    <div class="header_link">New Releases</div>
+                    <div class="header_link">Trending</div>
+                    <div class="header_link">Podcasts</div>
+                    <div class="header_link">Library</div>
+                    <a href="contact.html" target="_blank">
+                        <div class="header_link">Contact Us</div>
+                    </a>
+                </div>
+                <div class="profile">
+                    <img src="./home/img/user.jpg" alt="User Profile" class="user_img" />
+                    <div class="user_name">
+                        <!-- <script>document.write(localStorage.getItem('username'))</script> -->
+                        <!-- Devesh -->
+
+                    </div>
+                    <a style="text-decoration: none; color: #fff;" href="logout.html">Logout</a>
+                </div>
             </div>
-            <a style="text-decoration: none; color: #fff;" href="logout.html">Logout</a>
+
+            <div id="player" class="player">
+                <div class="music">
+                    <img src="./home/img/stay.jpg" alt="Music" class="music_img" />
+                    <div class="music_details">
+                        <div class="title">STAY (with Justin Bieber)</div>
+                        <div class="subtitle">The Kid LAROI, Justin Bieber</div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <i class="fas fa-step-backward"></i>
+                    <i class="fas fa-play"></i>
+                    <i class="fas fa-step-forward"></i>
+                </div>
+                <div class="options">
+                    <i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-volume-down"></i>
+                    <div class="volume"></div>
+                </div>
+            </div>
+
+            <div id="recently_played" class="recently_played">
+                <div class="heading">Recently Played</div>
+                <div class="list_box">
+                    <div class="list_item">
+                        <img src="./home/img/bad-habits.jpg" alt="List Icon" class="list_img" />
+                        <div class="list_details">
+                            <div class="list_title">Bad Habits</div>
+                            <div class="list_subtitle">
+                                <img src="./home/img/E.png" alt="E" />
+                                <div class="artist_name">Ed Sheeren</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list_item">
+                        <img src="./home/img/cradles.jpg" alt="List Icon" class="list_img" />
+                        <div class="list_details">
+                            <div class="list_title">Cradles</div>
+                            <div class="list_subtitle">
+                                <div class="artist_name">Sub Urban</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list_item">
+                        <img src="./home/img/beggin.jpg" alt="List Icon" class="list_img" />
+                        <div class="list_details">
+                            <div class="list_title">Beggin'</div>
+                            <div class="list_subtitle">
+                                <div class="artist_name">Maneskin</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list_item">
+                        <img src="./home/img/Rob-A-Bank.jpg" alt="List Icon" class="list_img" />
+                        <div class="list_details">
+                            <div class="list_title">Rob A Bank</div>
+                            <div class="list_subtitle">
+                                <img src="./home/img/E.png" alt="E" />
+                                <div class="artist_name">Confetti</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list_item">
+                        <img src="./home/img/Save-your-tears.jpg" alt="List Icon" class="list_img" />
+                        <div class="list_details">
+                            <div class="list_title">Save Your Tears</div>
+                            <div class="list_subtitle">
+                                <img src="./home/img/E.png" alt="E" />
+                                <div class="artist_name">The Weeknd</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="recommend" class="recommend">
+                <div class="top_text">
+                    <div class="top_left">Recommended for you</div>
+                    <div class="top_right">See all</div>
+                </div>
+                <div class="bottom_box">
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/positions.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Positions</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">Ariana Grnde</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/astronaut-in-the-ocean.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Astronaut in The..</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">Masked Wolf</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/Dynamite.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Dynamite</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">BTS</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/ashes.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Ashes</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">Steller</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/bad-habits.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Bad Habits</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">Ed Sheeran</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/Save-your-tears.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Save Your Tears</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">The Weeknd</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
