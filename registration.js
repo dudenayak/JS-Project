@@ -11,9 +11,17 @@ const errorPassword = document.getElementById('errorPassword');
 const errorCPassword = document.getElementById('errorCPassword');
 
 // USERNAME
+const isValidUsername = (username) => {
+  const regex = /^[A-Za-z][A-Za-z0-9_]{7,29}$/;
+  return username.match(regex);
+};
+
 username.addEventListener('input', (e) => {
   if (username.value == '') {
     errorUsername.innerHTML = 'Username is required';
+  } else if (!isValidUsername(username.value)) {
+    errorUsername.innerHTML =
+      'Provide a valid username having alphanumeric values.';
   } else {
     errorUsername.innerHTML = '';
   }
@@ -36,7 +44,6 @@ email.addEventListener('input', (e) => {
 });
 
 // PHONE
-
 const isValidPhone = (phone) => {
   const regexPhone = /^[0-9]{10}$/;
   return phone.match(regexPhone);
@@ -53,11 +60,17 @@ phone.addEventListener('input', (e) => {
 });
 
 // PASSWORD
+const isValidPassword = (password) => {
+  var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/;
+  return password.match(regex);
+};
+
 password.addEventListener('input', (e) => {
   if (password.value == '') {
     errorPassword.innerHTML = 'Password is required';
-  } else if (password.value.length < 8) {
-    errorPassword.innerHTML = 'Password must be at least 8 characters.';
+  } else if (!isValidPassword(password.value)) {
+    errorPassword.innerHTML =
+      'Password must be of at least 8 characters that include at least 1 lowercase, 1 uppercase, 1 special character and 1 number';
   } else {
     errorPassword.innerHTML = '';
   }

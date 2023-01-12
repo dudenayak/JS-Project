@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast</title>
+    <link rel="stylesheet" href="home/css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body>
+    <div id="main" class="main">
+        <div class="container position-relative">
+            <script src="./navbar.js"></script>
+            <div id="recommend" class="recommend">
+                <div class="top__text">
+                    <div class="top_left">Recommended for you</div>
+                    <div class="top_right">See all</div>
+                </div>
+                <div class="bottom_box">
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/positions.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Positions</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">Ariana Grnde</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/astronaut-in-the-ocean.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Astronaut in The..</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">Masked Wolf</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/Dynamite.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Dynamite</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">BTS</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/ashes.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Ashes</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">Steller</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/bad-habits.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Bad Habits</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">Ed Sheeran</div>
+                        </div>
+                    </div>
+                    <div class="box_card">
+                        <div class="box_img">
+                            <img src="./home/img/Save-your-tears.jpg" alt="" class="box_img">
+                        </div>
+                        <div class="box_title">Save Your Tears</div>
+                        <div class="box_subtitle list_subtitle">
+                            <img src="./home/img/E.png" alt="E" />
+                            <div class="artist_name">The Weeknd</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var check = localStorage.getItem("code")
+
+        if (check == "secret") {
+
+        } else {
+            window.location.href = "login-signup.html"
+        }
+    </script>
+</body>
+
+</html>

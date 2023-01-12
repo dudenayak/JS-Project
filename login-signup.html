@@ -23,7 +23,8 @@
     <div id="left-form" class="form fade-in-element">
       <h1>Login</h1>
       <form action="/" method="GET">
-        <input id="username_login" type="text" name="user-name" class="input-box" placeholder="Username" required />
+        <input id="username_login" type="text" name="user-name" class="input-box" placeholder="Username or Email"
+          required />
         <input id="password_login" type="password" name="user-password" class="input-box" placeholder="Password"
           required />
         <input type="button" name="login-button" class="button" value="Login" onclick="loadData()" />
@@ -72,6 +73,19 @@
     alert("User registered successfully!! Please login now!")
     location.reload();
 
+    // DO NOT REGISTER WHEN INPUT IS EMPTY
+
+    // document.getElementById("form").addEventListener("submit", function (e) {
+    //   if (!username.value && !email.value && !phone.value && !password.value && !cpassword.value) {
+    //     e.preventDefault();
+    //     return false;
+    //     alert("Data can not be empty")
+    //   } else {
+    //     alert("User registered successfully!! Please login now!")
+    //     location.reload();
+    //   }
+    // })
+
     document.getElementById("username").value != '';
     document.getElementById("email").value != '';
     document.getElementById("phone").value != '';
@@ -113,9 +127,9 @@
 
     let user_records = new Array();
     user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
-    if (user_records.some((v) => { return v.username == username && v.password == password })) {
+    if (user_records.some((v) => { return v.username == username || v.email == username && v.password == password })) {
       alert("Logged in successfully!");
-      let current_user = user_records.filter((v) => { return v.username == username && v.password == password })[0]
+      let current_user = user_records.filter((v) => { return v.username == username || v.email == username && v.password == password })[0]
       localStorage.setItem("code", "secret");
       window.location.href = "home.html";
     } else {
