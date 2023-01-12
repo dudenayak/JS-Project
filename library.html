@@ -8,92 +8,55 @@
     <title>Spotify | Library</title>
     <link rel="icon" href="./login/img/logo.png">
     <link rel="stylesheet" href="home/css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div id="main" class="main">
         <div class="container position-relative">
             <script src="./navbar.js"></script>
-            <div id="recommend" class="recommend">
-                <div class="top__text">
-                    <div class="top_left">Recommended for you</div>
-                    <div class="top_right">See all</div>
+            <form action=''>
+                <input type='hidden' id='hidden_token'>
+                <div class='col-sm-6 form-group row mt-4 px-4'>
+                    <label for='Genre' class='form-label col-sm-2'>Genre:</label>
+                    <select name='' id='select_genre' class='form-control form-control-sm col-sm-10'>
+                        <option>Select...</option>
+                    </select>
                 </div>
-                <div class="bottom_box">
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/positions.jpg" alt="" class="box_img">
-                        </div>
-                        <div class="box_title">Positions</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">Ariana Grnde</div>
-                        </div>
+                <div class='col-sm-6 form-group row px-4'>
+                    <label for='Genre' class='form-label col-sm-2'>Playlists:</label>
+                    <select name='' id='select_playlist' class='form-control form-control-sm col-sm-10'>
+                        <option>Select...</option>
+                    </select>
+                </div>
+                <div class='col-sm-6 row form-group px-4'>
+                    <button type='submit' id='btn_submit' class='btn btn-success col-sm-12'>Search</button>
+                </div>
+            </form>
+            <div class='row'>
+                <div class='col-sm-6 px-0'>
+                    <div class='list-group song-list'>
+
                     </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/astronaut-in-the-ocean.jpg" alt="" class="box_img">
-                        </div>
-                        <div class="box_title">Astronaut in The..</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">Masked Wolf</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/Dynamite.jpg" alt="" class="box_img">
-                        </div>
-                        <div class="box_title">Dynamite</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">BTS</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/ashes.jpg" alt="" class="box_img">
-                        </div>
-                        <div class="box_title">Ashes</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">Steller</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/bad-habits.jpg" alt="" class="box_img">
-                        </div>
-                        <div class="box_title">Bad Habits</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">Ed Sheeran</div>
-                        </div>
-                    </div>
-                    <div class="box_card">
-                        <div class="box_img">
-                            <img src="./home/img/Save-your-tears.jpg" alt="" class="box_img">
-                        </div>
-                        <div class="box_title">Save Your Tears</div>
-                        <div class="box_subtitle list_subtitle">
-                            <img src="./home/img/E.png" alt="E" />
-                            <div class="artist_name">The Weeknd</div>
-                        </div>
-                    </div>
+                </div>
+                <div class='offset-md-1 col-sm-4' id='song-detail'>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        var check = localStorage.getItem("code")
+        <script>
+            var check = localStorage.getItem("code")
 
-        if (check == "secret") {
+            if (check == "secret") {
 
-        } else {
-            window.location.href = "login-signup.html"
-        }
-    </script>
+            } else {
+                window.location.href = "login-signup.html"
+            }
+        </script>
+        <script src='./library/app.js' type='text/javascript'></script>
 </body>
 
 </html>

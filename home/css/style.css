@@ -6,10 +6,10 @@
     overflow: hidden;
 }
 
-/* a{
+a{
     text-decoration: none;
     color: #fff;
-} */
+}
 
 body {
     font-family: 'Montserrat';
@@ -326,6 +326,46 @@ ul li {
     justify-content: flex-start;
     align-content: center;
 }
+
+/* library page */
+
+.btn.dropdown-toggle {
+    width: 150px;
+    text-align: center;
+  }
+  
+  span.caret {
+    position: absolute;
+    left: 90%;
+    top: 45%;
+  }
+  
+  label {
+    padding-top: 5px;
+  }
+  
+  .form-label {
+    padding-left: 0px !important;
+  }
+  
+  .form-control {
+    border-radius: 100px;
+  }
+  
+  .btn-success {
+    background-color: #3b7d4a im !important;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-success:hover {
+    background-color: #4daf64;
+  }
+  
+  img.track {
+    border: 3px solid #8a8a8a;
+  }
 
 
 @media screen and (max-width: 1000px){

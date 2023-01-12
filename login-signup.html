@@ -45,7 +45,7 @@
     </div>
     <div id="right-form" class="form form-hide">
       <h1>Sign Up</h1>
-      <form id="form" action="/" name="myForm" method="post">
+      <form id="form" action="/" name="myForm" method="post" onsubmit="return checkForBlank()">
         <input id="username" type="text" name="user-name" class="input-box" placeholder="Username" required />
         <div id="errorUsername" class="error"></div>
         <input id="email" type="email" name="user-email" class="input-box" placeholder="Email" required />
@@ -57,13 +57,34 @@
         <input id="cpassword" type="password" name="user-cpassword" class="input-box" placeholder="Confirm Password"
           required />
         <div id="errorCPassword" class="error"></div>
-        <input type="submit" name="signup-button" class="button" value="Sign Up" onclick="return saveData()" />
+        <input type="submit" id="button" name="signup-button" class="button" value="Sign Up"
+          onclick="return saveData()" />
       </form>
     </div>
   </section>
 
 </body>
+
+<!-- <script>
+  function checkForBlank() {
+    if (document.getElementById('username').value == "") {
+      alert("Please fill your field");
+      return false;
+    }
+  }
+</script> -->
+
 <script>
+
+
+  // function success() {
+  //   if (document.getElementById("username").value === "") {
+  //     document.getElementById('button').disabled = true;
+  //   } else {
+  //     document.getElementById('button').disabled = false;
+  //   }
+  // }
+
   function saveData(e) {
     let username, email, phone, password, cpassword;
     username = document.getElementById("username").value;
@@ -71,8 +92,8 @@
     phone = document.getElementById("phone").value;
     password = document.getElementById("password").value;
     cpassword = document.getElementById("cpassword").value;
-    alert("User registered successfully!! Please login now!")
-    location.reload();
+    // alert("User registered successfully!! Please login now!")
+    // location.reload();
 
     // DO NOT REGISTER WHEN INPUT IS EMPTY
 
@@ -92,6 +113,7 @@
     document.getElementById("phone").value != '';
     document.getElementById("password").value != '';
     document.getElementById("cpassword").value != '';
+
     // username.value = '';
     // email.value = '';
     // phone.value = "";
@@ -109,6 +131,8 @@
         "password": password,
         "cpassword": cpassword
       })
+      alert("User registered successfully!! Please login now!")
+      location.reload();
       localStorage.setItem("users", JSON.stringify(user_records));
       document.getElementById("username").value = "";
       document.getElementById("email").value = "";
