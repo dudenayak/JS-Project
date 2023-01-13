@@ -26,6 +26,10 @@ body {
     height: 100vh;
 }
 
+.libcontain{
+    height: 100vh;
+}
+
 #header {
     position: sticky;
     display: flex;
@@ -301,7 +305,7 @@ ul li {
     display: flex;
 }
 
-.box_card{
+.box_card {
     width: fit-content;
     border-radius: 20px;
     padding: 20px 18px 14px 18px;
@@ -310,9 +314,99 @@ ul li {
     overflow: hidden;
 }
 
+.box_card:hover{
+    background-color: #8282826e;
+    transition: background-color .5s ease;
+}
+
 .box_img{
     height: 150px;
 }
+
+.box_card:hover .play-button{display: block;}
+.box_card .play-button {
+    position: relative;
+		/* top: calc(40% - 30px); */
+		/* left: calc(10%); */
+        /* margin-top:  */
+		width: 40px;
+		height: 40px;
+		display: none;
+        border-radius: 50%;
+		padding: 0;
+        margin-left: 100px;
+        margin-top: -50px;
+		/* margin: 0 auto; */
+		/* user-select: none;		 */
+        background-color: green;
+		transition: background-color 0.5s ease;
+        cursor: pointer;
+        /* z-index: 100; */
+    }
+    
+.play-button:after {
+position: absolute;
+top: calc(25%);
+left: calc(35%);
+display: block;
+content: "";
+width: 0;
+height: 0;
+border-top: 10px solid transparent;
+border-bottom: 10px solid transparent;
+border-left: 14px solid black;
+cursor: pointer;
+
+}
+.play-button:hover {
+transform: scale(1.1);
+transition: transform .5s ease;
+}
+
+/* try */
+
+/* .box_card:hover .play-buttonn{display: block;}
+.box_card .play-buttonn {
+    position: fixed;
+		
+		width: 40px;
+		height: 40px;
+		display: none;
+        border-radius: 50%;
+		padding: 0;
+		margin: 0 auto;
+		user-select: none;		
+        background-color: green;
+		transition: background-color 0.5s ease;
+        cursor: pointer;
+    }
+    
+.play-buttonn:after {
+position: absolute;
+top: calc(25%);
+left: calc(35%);
+display: block;
+content: "";
+width: 0;
+height: 0;
+border-top: 10px solid transparent;
+border-bottom: 10px solid transparent;
+border-left: 14px solid black;
+cursor: pointer;
+
+}
+.play-buttonn:hover {
+transform: scale(1.1);
+transition: transform .5s ease;
+} */
+
+/* try over */
+
+/* .box_img:hover {
+    transform: scale(1.1);
+    transition: transform .5s ease;
+} */
+
 
 .box_title{
     margin-top: 15px;
@@ -346,27 +440,86 @@ ul li {
   
   .form-label {
     padding-left: 0px !important;
+    color: #3b7d4a;
   }
   
   .form-control {
-    border-radius: 100px;
+    border-radius: 10px;
+    background-color: #282828;
+    width: 70%;
+    height: 30px;
+    margin-left: 15px;
+    color: #3b7d4a;
+    font-size: 20px;
+    /* border: #fff; */
+    outline: #fff;
+
   }
   
   .btn-success {
     background-color: #3b7d4a im !important;
-    border-radius: 100px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
+    position: relative;
+    bottom: 0;
+    font-size: 25px;
+    margin-left: 20px ;
+    padding: 10px 55px;
+    background-color: #292525;
+    color: #3b7d4a;
+    border: none;
+    outline: none;
   }
   
   .btn-success:hover {
     background-color: #4daf64;
+    color: white;
   }
   
   img.track {
     border: 3px solid #8a8a8a;
   }
 
+  .genre {
+    width: 40%;
+    margin: 20px;
+    padding: 15px 20px;
+    background-color: #282828;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+  }
+
+  .list-group{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .song_detail {
+    margin-left: 20px;
+  }
+
+  .songs{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+  }
+
+  .song_title{
+    font-size: 40px;
+  }
+
+  .song_artist{
+    font-size: 20px;
+  }
+
+  /* .song_img{
+    width: 100px;
+    height: 100px;
+  } */
 
 @media screen and (max-width: 1000px){
     #player{

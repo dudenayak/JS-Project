@@ -141,14 +141,14 @@ const UIController = (function () {
       detailDiv.innerHTML = '';
 
       const html = `
-            <div class="row col-sm-12 px-0">
+            <div class="song_img">
                 <img src="${img}" alt="">        
             </div>
-            <div class="row col-sm-12 px-0">
-                <label for="Genre" class="form-label col-sm-12">${title}:</label>
+            <div class="song_title">
+                <label for="Genre" class="form-label">${title}</label>
             </div>
-            <div class="row col-sm-12 px-0">
-                <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
+            <div class="song_artist">
+                <label for="artist" class="form-label">By ${artist}</label>
             </div> 
             `;
 
